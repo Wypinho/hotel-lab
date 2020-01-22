@@ -26,6 +26,11 @@ export default {
 
     eventBus.$on('booking-added', booking => this.bookings.push(booking));
 
+    eventBus.$on('booking-deleted', id => {
+      const index = this.bookings.findIndex(booking => booking._id === id);
+      this.bookings.splice(index, 1);
+    })
+
   },
 
   methods: {
@@ -38,4 +43,10 @@ export default {
 </script>
 
 <style lang="css" scoped>
+
+#bookingsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
 </style>

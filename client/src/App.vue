@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>HOTEL CALIFORNIA</h1>
+    <h1><i>Welcome to the... </i>HOTEL CALIFORNIA</h1>
     <bookings-form />
     <bookings-grid />
   </div>
@@ -20,12 +20,17 @@ export default {
 </script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+body {
+  background: url('./assets/matthew-t-rader-RAUmhJRAq4c-unsplash.jpg') no-repeat;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'verdana';
 }
+
+h1 {
+  text-align: center;
+}
+
 </style>
