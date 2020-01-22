@@ -1,11 +1,12 @@
 <template lang="html">
 <div id="bookingsGrid">
-  <booking v-for="booking, index in bookings" :key="index" :booking="booking" />
+  <booking v-for="booking, index in bookings" :key="index" :booking="booking"/>
 </div>
 
 </template>
 
 <script>
+import { eventBus } from '../main';
 import BookingService from '../services/BookingService';
 import Booking from './Booking';
 
@@ -22,6 +23,8 @@ export default {
 
   mounted() {
     this.fetchData();
+
+    eventBus.$on('booking-added', booking => this.bookings.push(booking));
 
   },
 
